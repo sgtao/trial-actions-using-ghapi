@@ -29,4 +29,5 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           echo github command version
-          gh --version
+          # gh --version
+          gh api /orgs/sg-family/members
