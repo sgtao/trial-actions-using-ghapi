@@ -1,4 +1,5 @@
 name: Using github-script
+
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -8,15 +9,15 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   echo-message:
-  # The type of runner that the job will run on
-  runs-on: ubuntu-latest
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
-  # Steps represent a sequence of tasks that will be executed as part of the job
-  steps:
-    - uses: actions/github-script@v3
-      id: set-result
-      with:
-        script: return "Hello!"
-        result-encoding: string
-    - name: Get result
-      run: echo "${{steps.set-result.outputs.result}}"
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/github-script@v3
+        id: set-result
+        with:
+          script: return "Hello!"
+          result-encoding: string
+      - name: Get result
+        run: echo "${{steps.set-result.outputs.result}}"
