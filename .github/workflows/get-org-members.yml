@@ -1,4 +1,4 @@
-name: get Org members
+name: Get Org members
 
 # Controls when the workflow will run
 on:
@@ -7,8 +7,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  echo-message:
+  get-members:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -23,13 +22,3 @@ jobs:
           result-encoding: json
       - name: Get result
         run: echo "${{steps.get-org-members.outputs.result}}"
-
-    steps:
-      - uses: actions/github-script@v3
-        id: set-result
-        with:
-          script: return "Hello!"
-          result-encoding: string
-      - name: Get result
-        run: echo "${{steps.set-result.outputs.result}}"
-
