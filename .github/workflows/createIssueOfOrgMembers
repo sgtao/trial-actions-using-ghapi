@@ -18,7 +18,7 @@ jobs:
         id: get-org-members
         with:
           script: \
-            const sgFamilyMembers = await .rest.orgs.get('sg-family')
+            const sgFamilyMembers = await github.rest.orgs.get('sg-family')
             console.log(sgFamilyMembers)
           result-encoding: json
       - name: Get result
