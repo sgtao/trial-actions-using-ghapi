@@ -1,4 +1,4 @@
-name: create an issue of Org. members
+name: get Org members
 
 # Controls when the workflow will run
 on:
