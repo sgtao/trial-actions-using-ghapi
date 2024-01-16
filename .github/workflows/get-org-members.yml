@@ -16,7 +16,8 @@ jobs:
       - uses: actions/github-script@v3
         id: get-org-members
         with:
-          script: \
+          github-token: ${{secrets.GH_TOKEN}}
+          script: |
             const sgFamilyMembers = await github.rest.orgs.get('sg-family')
             console.log(sgFamilyMembers)
           result-encoding: json
